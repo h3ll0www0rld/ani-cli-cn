@@ -23,4 +23,3 @@ jobs:
         with:
           name: ani-cli-cn
           path: dist/ani-cli-cn.exe
-          --only-paths: '*.exe'
