@@ -18,3 +18,9 @@ jobs:
       # You can test your matrix by printing the current Python version
       - name: Run Build Script
         run: ./scripts/build.ps1
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: |
+            dist

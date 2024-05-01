@@ -6,6 +6,9 @@
 
 目前只支持这个
 
+# 下载
+请到`Github Actions`中的工件下载
+
 # 安装
 请确保`mpv`在你的环境变量中(在终端输入`mpv --version`有输出)
 ## Windows
