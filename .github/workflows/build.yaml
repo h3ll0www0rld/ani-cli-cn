@@ -21,6 +21,6 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: ani-cli-cn.exe
-          path: |
-            dist/ani-cli-cn.exe
+          name: ani-cli-cn
+          path: dist/ani-cli-cn.exe
+          --only-paths: '*.exe'
