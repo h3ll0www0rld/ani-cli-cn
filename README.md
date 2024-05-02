@@ -21,11 +21,6 @@ scoop install mpv
 ```
 ./ani-cli-cn.exe
 ```
-如果选择`girigirilove`源的话第一次运行需要运行
-```shell
-./install.ps1
-```
-安装`chromium`
 
 # 开发&构建
 在项目根目录下先运行
@@ -33,7 +28,5 @@ scoop install mpv
 pip install -r requirements.txt
 ```
 安装依赖<br>
-运行前，请运行`./setup.ps1`设置`PYPPETEER_CHROMIUM_REVISION`，不然可能会报错
-
 对于`windows`用户，本项目提供了一键构建脚本<br>
 在根目录下输入`./scripts/build.ps1`来进行构建
