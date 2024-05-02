@@ -18,14 +18,14 @@ scoop install mpv
 
 # 使用
 ## Windows
-```shell
-./ani-cli.exe
 ```
-## Linux & Mac
-```shell
-./ani-cli
+./ani-cli-cn.exe
 ```
-第一次运行是会下载`chromium`
+如果选择`girigirilove`源的话第一次运行需要运行
+```shell
+./install.ps1
+```
+安装`chromium`
 
 # 开发&构建
 在项目根目录下先运行
