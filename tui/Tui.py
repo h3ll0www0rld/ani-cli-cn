@@ -9,7 +9,7 @@ import os
 def main() -> None:
     keyword = TextInputer("搜索关键词:").show()
     source_list = ["iyinghua", "girigirilove"]
-    player_function_list = ["上一集", "下一集", "选择集数", "退出"]
+    player_function_list = ["上一集", "下一集", "重播", "选择集数", "退出"]
 
     # 选择源
     selected_source_index = Selector("选择一个源:", source_list).show()
@@ -38,7 +38,11 @@ def main() -> None:
     # 播放器菜单
     while True:
         if selected_episode_index == 0:
-            tmp_player_function_list = player_function_list[1:]
+            tmp_player_function_list = player_function_list.copy()
+            del tmp_player_function_list[0]
+        elif selected_episode_index == len(video_page_hrefs) - 1:
+            tmp_player_function_list = player_function_list.copy()
+            del tmp_player_function_list[1]
         else:
             tmp_player_function_list = player_function_list
         os.system("cls" if os.name == "nt" else "clear")
@@ -53,6 +57,10 @@ def main() -> None:
             player = MPV(video_link)
         elif tmp_player_function_list[selected_player_function_index] == "下一集":
             selected_episode_index += 1
+            video_link = session.play(video_page_hrefs[selected_episode_index])
+            player.close()
+            player = MPV(video_link)
+        elif tmp_player_function_list[selected_player_function_index] == "重播":
             video_link = session.play(video_page_hrefs[selected_episode_index])
             player.close()
             player = MPV(video_link)

@@ -39,6 +39,7 @@ class GiriGiriLove:
         src = response.html.find("td#playleft iframe", first=True).attrs["src"]
         return src.split("=")[-1]
 
+    # 检测是否有简体中文版本
     def changeToSC(self, video_page_hrefs: list[str]):
         test_video_page_href = video_page_hrefs[0].replace("-1-", "-2-")
         response = self.SESSION.get(self.BASE_URL + test_video_page_href)
