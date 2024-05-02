@@ -42,9 +42,10 @@ class GiriGiriLove:
     def changeToSC(self, video_page_hrefs: list[str]):
         test_video_page_href = video_page_hrefs[0].replace("-1-", "-2-")
         response = self.SESSION.get(self.BASE_URL + test_video_page_href)
+        response.html.render()
         if "m3u8" in response.html.html or "mp4" in response.html.html:
-            return video_page_hrefs
-        return [
-            video_page_href.replace("-1-", "-2-")
-            for video_page_href in video_page_hrefs
-        ]
+            return [
+                video_page_href.replace("-1-", "-2-")
+                for video_page_href in video_page_hrefs
+            ]
+        return video_page_hrefs
