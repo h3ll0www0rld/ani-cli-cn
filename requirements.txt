@@ -2,3 +2,4 @@ requests_html
 lxml_html_clean
 pyinstaller
 psutil
+questionary
