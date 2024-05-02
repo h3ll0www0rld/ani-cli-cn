@@ -1,5 +1,5 @@
 # ani-cli-cn
-一个更适合中国宝宝体制的`ani-cli`
+一个更适合中国宝宝体质的`ani-cli`
 
 # 支持源列表
 - iyinghua
