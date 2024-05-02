@@ -1,24 +1,30 @@
 # ani-cli-cn
-一个使用国内播放源的`ani-cli`，使你能通过终端来看番
+一个更适合中国宝宝体制的`ani-cli`
 
 # 支持源列表
 - iyinghua
-
-目前只支持这个
+- girigirilove
 
 # 下载
 请到`Github Actions`中的工件下载<br>
 [h3ll0www0rld/ani-cli-cn/actions](https://github.com/h3ll0www0rld/ani-cli-cn/actions)
 
 # 安装
-请确保`mpv`在你的环境变量中(在终端输入`mpv --version`有输出)
+本项目使用`mpv`作为播放器，请确保`mpv`在你的环境变量中(在终端输入`mpv --version`有输出)
 ## Windows
 ```shell
 scoop install mpv
 ```
 
 # 使用
-本项目有完整的`tui`，易于使用，这里不多说明
+## Windows
+```shell
+./ani-cli.exe
+```
+## Linux & Mac
+```shell
+./ani-cli
+```
 
 # 开发&构建
 在项目根目录下先运行

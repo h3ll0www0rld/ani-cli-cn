@@ -1,6 +1,4 @@
-blessed
 requests_html
 lxml_html_clean
 pyinstaller
-# windows
-windows-curses
+psutil

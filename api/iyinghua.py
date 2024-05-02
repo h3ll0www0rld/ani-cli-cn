@@ -3,15 +3,16 @@ from requests_html import HTMLSession
 
 class IYingHua:
     def __init__(self) -> None:
-        self.session = HTMLSession()
+        self.SESSION = HTMLSession()
+        self.BASE_URL = "http://www.iyinghua.io"
 
     def search(self, keyword: str) -> str:
         page_number = 1
         titles = []
-        links = []
+        hrefs = []
         while True:
-            search_url = f"http://www.iyinghua.io/search/{keyword}?page={page_number}"
-            response = self.session.get(search_url)
+            search_url = f"{self.BASE_URL}/search/{keyword}?page={page_number}"
+            response = self.SESSION.get(search_url)
             try:
                 items = response.html.find("li > h2 > a")
             except:
@@ -20,23 +21,23 @@ class IYingHua:
                 break
             for item in items:
                 titles.append(item.attrs["title"])
-                links.append(item.attrs["href"])
+                hrefs.append(item.attrs["href"])
             page_number += 1
-        return titles, links
+        return titles, hrefs
 
-    def episode(self, page_url: str) -> list[str]:
-        response = self.session.get(page_url)
-        video_links = []
+    def episodes(self, page_href: str) -> list[str]:
+        response = self.SESSION.get(self.BASE_URL + page_href)
+        video_page_hrefs = []
         ul_elements = response.html.find("div.movurl > ul")
         for ul in ul_elements:
             li_elements = ul.find("li")
             for li in li_elements:
                 href = li.find("a", first=True).attrs.get("href")
-                video_links.append(href)
-        return sorted(video_links)
+                video_page_hrefs.append(href)
+        return sorted(video_page_hrefs)
 
-    def play(self, page_url: str) -> str:
-        response = self.session.get(page_url)
+    def play(self, page_href: str) -> str:
+        response = self.SESSION.get(self.BASE_URL + page_href)
         data_vid = None
         div_element = response.html.find("div.bofang > div[data-vid]", first=True)
         if div_element:
