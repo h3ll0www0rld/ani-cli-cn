@@ -22,4 +22,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: ani-cli-cn
-          path: dist/*
+          path: dist/ani-cli-cn.exe
