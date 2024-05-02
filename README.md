@@ -25,6 +25,7 @@ scoop install mpv
 ```shell
 ./ani-cli
 ```
+第一次运行是会下载`chromium`
 
 # 开发&构建
 在项目根目录下先运行
