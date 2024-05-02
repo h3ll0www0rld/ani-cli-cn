@@ -8,7 +8,7 @@ $content | ForEach-Object {
         $_ = 'REVISION = "1294824"'
     }
     $_
-} | Set-Content $file -Force
+} | Set-Content $filePath -Force
 
 $content = Get-Content $filePath
 $content | ForEach-Object {
@@ -16,7 +16,7 @@ $content | ForEach-Object {
         $_ = 'DOWNLOAD_HOST = "https://registry.npmmirror.com/-/binary"'
     }
     $_
-} | Set-Content $file -Force
+} | Set-Content $filePath -Force
 
 pyinstaller -F main.py
 Rename-Item -Path "./dist/main.exe" -NewName "ani-cli-cn.exe"
