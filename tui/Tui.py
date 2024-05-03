@@ -52,26 +52,18 @@ def main() -> None:
         ).show()
         if tmp_player_function_list[selected_player_function_index] == "上一集":
             selected_episode_index -= 1
-            video_link = session.play(video_page_hrefs[selected_episode_index])
-            player.close()
-            player = MPV(video_link)
         elif tmp_player_function_list[selected_player_function_index] == "下一集":
             selected_episode_index += 1
-            video_link = session.play(video_page_hrefs[selected_episode_index])
-            player.close()
-            player = MPV(video_link)
         elif tmp_player_function_list[selected_player_function_index] == "重播":
-            video_link = session.play(video_page_hrefs[selected_episode_index])
-            player.close()
-            player = MPV(video_link)
+            pass
         elif tmp_player_function_list[selected_player_function_index] == "选择集数":
             os.system("cls" if os.name == "nt" else "clear")
             selected_episode_index = Selector(
                 "选择一集:", [f"第{i+1}集" for i in range(len(video_page_hrefs))]
             ).show()
-            video_link = session.play(video_page_hrefs[selected_episode_index])
-            player.close()
-            player = MPV(video_link)
         elif tmp_player_function_list[selected_player_function_index] == "退出":
             player.close()
             break
+        video_link = session.play(video_page_hrefs[selected_episode_index])
+        player.close()
+        player = MPV(video_link)
