@@ -1,4 +1,3 @@
-# 需要cookie
 from requests_html import HTMLSession
 
 
