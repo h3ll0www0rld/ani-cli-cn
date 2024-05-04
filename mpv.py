@@ -13,6 +13,8 @@ class MPV:
             raise NotImplementedError("Unsupported platform")
         process = subprocess.Popen(
             ["mpv", url],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.STDOUT
         )
 
     def close(self) -> None:

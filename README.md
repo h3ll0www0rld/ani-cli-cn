@@ -15,18 +15,23 @@
 ```shell
 scoop install mpv
 ```
-
-# 使用
-## Windows
-```
-./ani-cli-cn.exe
+## Ubuntu
+```shell
+sudo apt install mpv
 ```
 
 # 开发&构建
-在项目根目录下先运行
+## 开发
 ```shell
 pip install -r requirements.txt
 ```
-安装依赖<br>
-对于`windows`用户，本项目提供了一键构建脚本<br>
-在根目录下输入`./scripts/build.ps1`来进行构建
+## 构建
+### Windows
+```powershell
+./scripts/build.ps1
+```
+### Linux & Mac
+```shell
+./scripts/build.sh
+```
+
