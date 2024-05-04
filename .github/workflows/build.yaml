@@ -3,7 +3,7 @@ name: Build
 on: [push]
 
 jobs:
-  build windows:
+  build_windows_x64:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v4
@@ -23,7 +23,7 @@ jobs:
         with:
           name: ani-cli-cn-windows
           path: dist/ani-cli-cn.exe
-  build linux:
+  build_linux_x64:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -43,7 +43,7 @@ jobs:
         with:
           name: ani-cli-cn-linux
           path: dist/ani-cli-cn
-  build macos:
+  build_macos_x64:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
