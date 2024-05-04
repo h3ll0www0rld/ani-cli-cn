@@ -43,7 +43,7 @@ jobs:
         with:
           name: ani-cli-cn-linux
           path: dist/ani-cli-cn
-  build linux:
+  build macos:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
